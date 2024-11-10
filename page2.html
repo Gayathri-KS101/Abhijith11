@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="page2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --gradient: linear-gradient(90deg, #486242, #375535, #809176, #486242, #375535);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes neonGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--gradient);
+            background-size: 300% 300%;
+            animation: neonGradient 8s ease-in-out infinite;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            top: 0;
+        }
+
+        .big-image {
+            width: 100%;
+            height: 400px; /* Adjusted height of the big image */
+            object-fit: cover; /* Ensures the image covers the space without distortion */
+            display: block;
+        }
+
+        /* Overlay container */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .overlay-text {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+            background-image: var(--gradient);
+            background-size: 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+            transition: background-position 1s ease-in-out;
+        }
+
+        /* Animation for gradient movement */
+        .overlay-text:hover {
+            background-position: 100%;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .overlay-text {
+                font-size: 2.5rem;
+                padding: 10px 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .overlay {
+                padding: 15px 0;
+            }
+
+            .overlay-text {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .overlay-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            background-color: #444;
+            color: white;
+        }
+
+        .gallery {
+            padding: 20px;
+            width: 100vw; /* Full viewport width */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            display: flex; /* Use flexbox to keep items in a single row */
+        }
+
+        .horizontal-list {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Use flexbox to align items horizontally */
+        }
+
+        .horizontal-list li {
+            margin: 0 15px; /* Add some space between the items */
+        }
+
+        .horizontal-list img {
+            width: 300px; /* Set a fixed width for images */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Optional: add rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better visibility */
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="image-container">
+            <img src="image_vids/snapshots/mainimg/main.png" alt="Big Image" class="big-image">
+            <div class="overlay">
+                <div class="overlay-text">snapshots</div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <ul class="horizontal-list">
+                <li><img src="image_vids/snapshots/snapexpo/Untitled design (1).png" alt="image"></li>
+                <li><img src="image_vids/snapshots/snapexpo/Untitled design (2).png" alt="image"></li>
+                <li><img src="image_vids/snapshots/snapexpo/Untitled design (3).png" alt="image"></li>
+                <li><img src="image_vids/snapshots/snapexpo/Untitled design (4).png" alt="image"></li>
+                <li><img src="image_vids/snapshots/snapexpo/Untitled design (5).png" alt="image"></li>
+                <li><img src="image_vids/snapshots/snapexpo/Untitled design.png" alt="image"></li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>
