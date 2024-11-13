@@ -724,47 +724,35 @@ body {
 
 
 
+
+
+
+
+
+
 @media (max-width: 480px) {
-    #services .s-list .s-item li.service-item {
-        width: 40%; /* Set width to about one-third of the container */
-        max-width: 150px; /* Adjust maximum width for smaller items */
-        margin: 5px; /* Reduce margin for better spacing */
+    #services .s-list {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap into rows */
+        justify-content: center;
     }
 
-    #services .s-list {
-        flex-wrap: wrap; /* Allow wrapping for smaller screens */
-        justify-content: center; /* Center the items */
+    #services .s-list .s-item li.service-item {
+        width: 45%; /* Set width just under half for 2 columns */
+        max-width: 140px; /* Adjust max width slightly for smaller screens */
+        margin: 3px; /* Reduce margin for better fit */
     }
 
     #services h1 {
-        font-size: 30px; /* Adjust header size for mobile */
+        font-size: 28px; /* Further adjust font sizes if needed */
     }
 
     #services .s-list .s-item h2 {
-        font-size: 24px; /* Adjust subheader size for mobile */
+        font-size: 22px;
     }
 }
 
 
-
-
-
-
-
-
-
-/* Media query for screen width 480px or smaller */
-@media (max-width: 480px) {
-    .item {
-        width: 80%; /* Make each item take most of the width */
-        max-width: 300px; /* Limit max width for each item */
-        margin: 5px; /* Adjust margin for spacing */
-    }
-
-    .gallery-wrap {
-        justify-content: center; /* Center the items */
-    }
-}
 
 
 
